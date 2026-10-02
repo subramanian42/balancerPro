@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class GradientBackground extends StatelessWidget {
   final Widget child;
-  const GradientBackground({super.key, required this.child});
+  final Widget? overlay;
+  const GradientBackground({super.key, required this.child, this.overlay});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,9 @@ class GradientBackground extends StatelessWidget {
         ),
         Container(color: const Color(0x33000000)), // dark overlay
         child,
+
+        if (overlay != null)
+          Positioned(left: 0, right: 0, bottom: 0, child: overlay!),
       ],
     );
   }

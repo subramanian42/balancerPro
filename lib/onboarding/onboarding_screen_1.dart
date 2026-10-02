@@ -1,19 +1,28 @@
-import 'package:balanacerpro/constants/colors.dart';
 import 'package:balanacerpro/constants/font_sizes.dart';
+import 'package:balanacerpro/onboarding/widgets/welcome_popup.dart';
 import 'package:balanacerpro/widgets/background.dart';
 import 'package:flutter/material.dart';
 
-class OnboardingScreen1 extends StatelessWidget {
+class OnboardingScreen1 extends StatefulWidget {
   const OnboardingScreen1({super.key});
+
+  @override
+  State<OnboardingScreen1> createState() => _OnboardingScreen1State();
+}
+
+class _OnboardingScreen1State extends State<OnboardingScreen1> {
+  bool showWelcomePopup = false;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: SizedBox(
-        height: 844,
-
-        child: Scaffold(
-          body: GradientBackground(
+        height: 850,
+        width: 350,
+        child: Material(
+          child: GradientBackground(
+            // its a stack'
+            overlay: showWelcomePopup ? const WelcomePopup() : null,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,9 +61,7 @@ class OnboardingScreen1 extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-
                 const SizedBox(height: 60),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: SizedBox(
@@ -62,17 +69,13 @@ class OnboardingScreen1 extends StatelessWidget {
                     height: 54,
                     child: ElevatedButton(
                       onPressed: () {
-                        AnimatedContainer(
-                          width: 358,
-                          height: 250,
-                          color: BalancerColors.black,
-                          duration: Duration(seconds: 4),
-                        );
-                        // );
+                        setState(() {
+                          showWelcomePopup = !showWelcomePopup;
+                        });
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
-                        foregroundColor: BalancerColors.black,
+                        foregroundColor: Colors.black,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(45),
