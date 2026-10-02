@@ -1,3 +1,4 @@
+import 'package:balanacerpro/account_creation/create_account_1.dart';
 import 'package:balanacerpro/constants/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -93,7 +94,11 @@ class _WelcomePopupState extends State<WelcomePopup>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => CreateAccount1(),
+                        ),
+                      ),
                       style: ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(
                           BalancerColors.black,
