@@ -35,12 +35,7 @@ class GradientBackground extends StatelessWidget {
         child,
 
         if (showWelcomePopup)
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Center(child: WelcomePopup()),
-          ),
+          Positioned(left: 0, right: 0, bottom: 0, child: WelcomePopup()),
       ],
     );
   }

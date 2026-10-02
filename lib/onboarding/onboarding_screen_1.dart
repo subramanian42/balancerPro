@@ -1,3 +1,4 @@
+import 'package:balanacerpro/constants/colors.dart';
 import 'package:balanacerpro/constants/font_sizes.dart';
 import 'package:balanacerpro/widgets/background.dart';
 import 'package:flutter/material.dart';
@@ -37,12 +38,12 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsGeometry.symmetric(horizontal: 100),
+                  padding: EdgeInsetsGeometry.symmetric(horizontal: 125),
                   child: const Text(
                     'BalancePro',
                     style: TextStyle(
-                      color: Color(0xFFD9D9D9),
-                      fontSize: FontSizes.mobileHeading_3,
+                      color: BalancerColors.accent,
+                      fontSize: FontSizes.mobileHeading_5,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -55,7 +56,7 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: FontSizes.mobileHeading_5,
+                    fontSize: FontSizes.mobileHeading_3,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -63,12 +64,12 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: SizedBox(
-                    width: 342,
+                    width: 358,
                     height: 54,
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          _showWelcomePopup = !_showWelcomePopup;
+                          _showWelcomePopup = true;
                         });
                       },
                       style: ElevatedButton.styleFrom(
