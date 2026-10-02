@@ -1,9 +1,14 @@
+import 'package:balanacerpro/onboarding/widgets/welcome_popup.dart';
 import 'package:flutter/material.dart';
 
 class GradientBackground extends StatelessWidget {
   final Widget child;
-  final Widget? overlay;
-  const GradientBackground({super.key, required this.child, this.overlay});
+  final bool showWelcomePopup;
+  const GradientBackground({
+    super.key,
+    required this.child,
+    required this.showWelcomePopup,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +34,13 @@ class GradientBackground extends StatelessWidget {
         Container(color: const Color(0x33000000)), // dark overlay
         child,
 
-        if (overlay != null)
-          Positioned(left: 0, right: 0, bottom: 0, child: overlay!),
+        if (showWelcomePopup)
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Center(child: WelcomePopup()),
+          ),
       ],
     );
   }

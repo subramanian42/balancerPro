@@ -1,5 +1,4 @@
 import 'package:balanacerpro/constants/font_sizes.dart';
-import 'package:balanacerpro/onboarding/widgets/welcome_popup.dart';
 import 'package:balanacerpro/widgets/background.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +10,7 @@ class OnboardingScreen1 extends StatefulWidget {
 }
 
 class _OnboardingScreen1State extends State<OnboardingScreen1> {
-  bool showWelcomePopup = false;
+  bool _showWelcomePopup = false;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +20,7 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
         width: 350,
         child: Material(
           child: GradientBackground(
-            // its a stack'
-            overlay: showWelcomePopup ? const WelcomePopup() : null,
+            showWelcomePopup: _showWelcomePopup,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -70,7 +68,7 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          showWelcomePopup = !showWelcomePopup;
+                          _showWelcomePopup = !_showWelcomePopup;
                         });
                       },
                       style: ElevatedButton.styleFrom(
