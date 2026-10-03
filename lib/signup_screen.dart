@@ -1,10 +1,10 @@
 import 'package:balanacerpro/onboarding/widgets/welcome_popup.dart';
 import 'package:flutter/material.dart';
 
-class GradientBackground extends StatelessWidget {
+class SignupScreen extends StatelessWidget {
   final Widget child;
   final bool showWelcomePopup;
-  const GradientBackground({
+  const SignupScreen({
     super.key,
     required this.child,
     required this.showWelcomePopup,

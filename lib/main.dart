@@ -1,4 +1,4 @@
-import 'package:balanacerpro/onboarding/splash_screen.dart';
+import 'package:balanacerpro/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Balancer Pro',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: OnboardingScreen(),
     );
   }
 }

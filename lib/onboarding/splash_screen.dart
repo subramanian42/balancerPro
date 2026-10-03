@@ -1,5 +1,5 @@
 import 'package:balanacerpro/constants/font_sizes.dart';
-import 'package:balanacerpro/onboarding/onboarding_screen_1.dart';
+import 'package:balanacerpro/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -22,9 +22,9 @@ class SplashScreen extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => OnboardingScreen1()),
-            ),
+            onPressed: () => Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (context) => OnboardingScreen())),
             child: Text("press me "),
           ),
         ],
