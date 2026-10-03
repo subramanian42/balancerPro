@@ -2,8 +2,8 @@ flutter_native_splash:
   ios: true
   android: true
   web: false
-  color: "#42a5f5"
-  background_image: assets/balancer_app_logo.png
+  color: "040404"
+  image: assets/app_logo.png
 
   fullscreen: true  
 
